@@ -6,12 +6,7 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-console.log('Welcome to the Brain Games!');
-const userName = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${userName}!`);
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-function checkNumberOdd(num, answer) {
+function checkNumberOdd(num, answer, userName) {
   if (answer === 'no') {
     console.log('Correct!');
   } else {
@@ -21,7 +16,7 @@ function checkNumberOdd(num, answer) {
   }
 }
 
-function checkNumberEven(num, answer) {
+function checkNumberEven(num, answer, userName) {
   if (answer === 'yes') {
     console.log('Correct!');
   } else {
@@ -41,20 +36,23 @@ function questAnswer(num) {
   return readlineSync.question('Your answer: ');
 }
 
-function checkNumber(num) {
+function checkNumber(num, userName) {
   const answer = questAnswer(num);
 
   if (isEven(num)) {
-    checkNumberEven(num, answer);
+    checkNumberEven(num, answer, userName);
   } else {
-    checkNumberOdd(num, answer);
+    checkNumberOdd(num, answer, userName);
   }
 }
 
-const count = 5;
+export default function evenStartGame(userName) {
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-for (let i = 0; i < count; i++) {
-  const num = getRandomInt(1, 100);
-  checkNumber(num);
+  for (let i = 0; i < 3; i++) {
+    const num = getRandomInt(1, 100);
+    checkNumber(num, userName);
+  }
+
+  console.log(`Congratulations, ${userName}!`);
 }
-console.log(`Congratulations, ${userName}!`);

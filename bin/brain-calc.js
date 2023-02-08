@@ -1,11 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-console.log('Welcome to the Brain Games!');
-const userName = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${userName}!`);
-console.log('What is the result of the expression?');
-
 const calculate = (a, b, operators) => {
   let result = null;
 
@@ -30,10 +25,11 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-function checkNumber(a, b, operator) {
+function checkNumber(a, b, operator, userName) {
   console.log(`Question: ${a} ${operator} ${b}`);
   const answer = readlineSync.question('Your answer: ');
   const rightAnswer = calculate(a, b, operator);
+
   if (+answer === rightAnswer) {
     console.log('Correct!');
   } else {
@@ -43,15 +39,15 @@ function checkNumber(a, b, operator) {
   }
 }
 
-const startGame = () => {
+export default (userName) => {
+  console.log('What is the result of the expression?');
+
   for (let i = 0; i < 3; i++) {
     const a = getRandomInt(1, 20);
     const b = getRandomInt(1, 20);
     const operators = ['+', '-', '*'];
     const operator = operators[getRandomInt(0, operators.length - 1)];
-    checkNumber(a, b, operator);
+    checkNumber(a, b, operator, userName);
   }
   console.log(`Congratulations, ${userName}!`);
 };
-
-startGame();
