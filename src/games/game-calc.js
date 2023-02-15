@@ -1,6 +1,6 @@
-import runGame from '../index.js';
+import gameLogic from '../index.js';
 
-const gameDescription = 'What is the result of the expression?';
+const gameView = 'What is the result of the expression?';
 
 const calculate = (a, b, operators) => {
   let result = null;
@@ -37,6 +37,6 @@ const getGameData = () => {
   return [question, correctAnswer];
 };
 
-const startGame = () => runGame(gameDescription, getGameData);
+const startGame = () => gameLogic(gameView, getGameData);
 
 export default startGame;

@@ -1,6 +1,6 @@
-import runGame from '../index.js';
+import gameLogic from '../index.js';
 
-const gameDescription = 'Find the greatest common divisor of given numbers.';
+const gameView = 'Find the greatest common divisor of given numbers.';
 
 const getRandomInt = (min, max) => {
   min = Math.ceil(min);
@@ -25,6 +25,6 @@ const getGameData = () => {
   return [question, correctAnswer];
 };
 
-const startGame = () => runGame(gameDescription, getGameData);
+const startGame = () => gameLogic(gameView, getGameData);
 
 export default startGame;
