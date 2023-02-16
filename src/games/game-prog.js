@@ -1,12 +1,7 @@
 import gameLogic from '../index.js';
+import getRandomInt from '../random.js';
 
 const gameView = 'What number is missing in the progression?';
-
-const getRandomInt = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
 
 const getProgression = (start, step, length) => {
   const progression = [];

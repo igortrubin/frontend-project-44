@@ -1,3 +1,4 @@
-import playGameProg from '../src/games/game-prog.js';
+#!/usr/bin/env node
+import startGame from '../src/games/game-prog.js';
 
-playGameProg();
+startGame();

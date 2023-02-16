@@ -1,6 +1,7 @@
 import gameLogic from '../index.js';
+import getRandomInt from '../random.js';
 
-const gameView = 'What is the result of the expression?';
+const gameView = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const calculate = (a, b, operators) => {
   let result = null;
@@ -18,12 +19,6 @@ const calculate = (a, b, operators) => {
     default: break;
   }
   return result;
-};
-
-const getRandomInt = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 const getGameData = () => {
