@@ -1,7 +1,7 @@
 import gameLogic from '../index.js';
 import getRandomInt from '../random.js';
 
-const gameView = 'Answer "yes" if the number is even, otherwise answer "no".';
+const gameView = 'What is the result of the expression?';
 
 const calculate = (a, b, operators) => {
   let result = null;
