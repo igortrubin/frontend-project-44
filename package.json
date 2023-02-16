@@ -32,6 +32,6 @@
     "readline-sync": "^1.4.10"
   },
   "resolutions": {
-    "esquery": "1.4.2"
+    "esquery": "1.4.1"
   }
 }
