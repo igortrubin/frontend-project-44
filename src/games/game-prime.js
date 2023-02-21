@@ -13,9 +13,9 @@ const isPrime = (number) => {
 };
 
 const getGamedata = () => {
-  const randomNum = getRandomInt(1, 100);
-  const correctAnswer = isPrime(randomNum) ? 'yes' : 'no';
-  return [randomNum, correctAnswer];
+  const randomNumber = getRandomInt(1, 100);
+  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
+  return [randomNumber, correctAnswer];
 };
 
 const startGame = () => gameLogic(gameView, getGamedata);

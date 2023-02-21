@@ -9,9 +9,7 @@ const gameLogic = (gameView, getGameData) => {
   console.log(gameView);
 
   for (let i = 0; i < countRounds; i += 1) {
-    const gameData = getGameData();
-    const question = gameData[0];
-    const correctAnswer = gameData[1];
+    const [question, correctAnswer] = getGameData();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
